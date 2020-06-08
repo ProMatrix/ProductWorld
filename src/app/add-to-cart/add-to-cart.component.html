@@ -1,0 +1,54 @@
+<div style="width: 100%; text-align: center;">
+
+    <p>ADD TO CART</p>
+
+    <form nonvalidate (ngSubmit)="onClickSave()" [formGroup]="cartItemForm">
+        <table style="width: 300px; display: inline-table">
+            <tr>
+                <th></th>
+                <th style="text-align: right;">{{service.cartProduct.name}}</th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="text-align: right;">Price: </td>
+                <td>{{service.formatPrice(service.cartProduct.price)}}</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="text-align: right;"><label for="zipecodeId">Zipcode: </label></td>
+                <td><input style="width: 80px; " id="zipcodeId" type="number" placeholder="Zipcode"
+                        formControlName="zipcode" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="text-align: right;"><label for="quantityId">Quantity: </label></td>
+                <td><input style="width: 80px; " id="quantityId" type="number" placeholder="Quantity"
+                        formControlName="quantity" /></td>
+            </tr>
+
+            <tr *ngFor='let cf of service.cartItem.customFields'>
+                <td></td>
+                <td><label>{{cf.label}}</label></td>
+                <td><input style="width: 80px; " type="text" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>&nbsp;</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td style="text-align: right;"><button type="submit" style="width: 80px; ">Save</button></td>
+                <td></td>
+            </tr>
+
+
+        </table>
+    </form>
+</div>

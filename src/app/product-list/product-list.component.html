@@ -1,0 +1,19 @@
+<div style="width: 100%; text-align: center;">
+
+    <p>PRODUCT LIST</p>
+
+    <table style="width: 300px; display: inline-table">
+        <tr>
+            <th></th>
+            <th>NAME</th>
+            <th>PRICE</th>
+        </tr>
+        <tr *ngFor='let product of service.products'> 
+            <td><button (click)="onClickAdd(product.id)">Add</button></td>
+            <td>{{product.name}}</td>
+            <td>{{service.formatPrice(product.price)}}</td>
+        </tr>
+
+    </table>
+
+</div>
